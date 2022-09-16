@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="box" id="heading"> 
+        <h1><%= ListTitle %></h1>
+    </div>
+   
+
+      <div class="box"> 
+
+
+        <% for(var i=0; i<listeditem.length; i++){%>
+            <div class="item">
+                <input type="checkbox">
+                <p><%=listeditem[i]%></p>
+            </div>
+            
+       <% }%>
+       <form action="/" method="post" class="item">
+        <input type="text" name="input" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="submit">+</button>
+    </form>
+    </div>
+</body>
+<footer>Shahed @2022</footer>
+</html>
