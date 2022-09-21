@@ -14,23 +14,22 @@
     <div class="box" id="heading"> 
         <h1><%= ListTitle %></h1>
     </div>
-   
-
       <div class="box"> 
-
-
-        <% for(var i=0; i<listeditem.length; i++){%>
+        <% listeditem.forEach(item => { %>
+            <form action="/delete" method="post">
             <div class="item">
-                <input type="checkbox">
-                <p><%=listeditem[i]%></p>
+                <input type="checkbox" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+                <p><%=item.name%></p>
             </div>
-            
-       <% }%>
+            <input type="hidden" name="listname" value="<%= ListTitle %>">
+        </form>
+       <% })%>
+
        <form action="/" method="post" class="item">
         <input type="text" name="input" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="submit">+</button>
+        <button type="submit" name="submit" value="<%= ListTitle %>">+</button>
     </form>
     </div>
 </body>
-<footer>Shahed @2022</footer>
+<footer>Shahed Hossen <span class="footer-c"> ©2022 </span></footer>
 </html>
